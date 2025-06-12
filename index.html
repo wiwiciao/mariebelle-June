@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>MarieBelle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/icon.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="img-fluid" alt="mariebelle">
+        </a>
+
+        <!-- Mobile Right Elements -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapse Elements -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">定番商品</a>
+              <ul class="dropdown-menu01">
+                <li><a class="dropdown-item" href="">節慶禮品</a></li>
+                <li><a class="dropdown-item" href="">團購組合</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                COLLECTIONS
+              </a>
+              <ul class="dropdown-menu01">
+                <li><a class="dropdown-item" href="chocolateganache_page.html">Chocolate Ganache</a></li>
+                <li><a class="dropdown-item" href="finde_page.html">Finde Chocolate</a></li>
+                <li><a class="dropdown-item" href="chocolateBar_page.html">Chocolate Bar</a></li>
+                <li><a class="dropdown-item" href="">Single Origin</a></li>
+                <li><a class="dropdown-item" href="">Cooke&Baked Cake</a></li>
+                <li><a class="dropdown-item" href="">Hot Chocolate</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">NEWS</a></li>
+          </ul>
+          <!-- Buttons Elements -->
+          <ul class="bar_icons">
+            <a href="#"><i class="fa-solid fa-circle-user nav-item" alt="circle user"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping nav-item" id="cart-shopping" alt="cart shopping"></i></a>
+
+
+            <!-- 購物車清單 -->
+<div id="cart-list" class="cart-dropdown">
+  <h3>Cart Shop</h3>
+  <ul id="cart-items">
+    <li>購物車是空的</li>
+  </ul>
+</div>
+
+
+            <a href="#"><i class="fa-solid fa-comment-dots" alt="comment dots"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass nav-item" alt="magnifying glass"></i></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main id="main">
+    <!-- Carousel -->
+    <div class="sysCarousel">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <!-- carousel 圓鈕 -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 0"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 2"></button>
+        </div>
+        <!-- carousel 輪播圖 -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/carousel_001.jpeg" class="d-block w-100" alt="Title 1">
+          </div>
+          <div class="carousel-item">
+            <img src="images/carousel_002.jpeg" class="d-block w-100" alt="Title 2">
+          </div>
+          <div class="carousel-item">
+            <img src="images/carousel_003.jpeg" class="d-block w-100" alt="Title 3">
+          </div>
+        </div>
+        <!-- carousel 左右切換鈕 -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- Summer Gift Selection -->
+    <section class="product_lists">
+      <h2 class="sysHeadline">
+        <span>
+          初夏の禮品祭
+          <!-- 初夏のギフトセレクション -->
+          <b>Summer Gift Selection</b>
+        </span>
+      </h2>
+
+      <!-- .container>.row>.box*4 -->
+      <div class="container">
+        <div class="row">
+          <!-- 商品項目 1 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer01.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box">
+              <div class="product-title">奇幻寶盒</div>
+              <div class="product-price">NT$360</div>
+            </div>
+          </div>
+          <!-- 商品項目 2 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer02.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box sysBox">
+              <div class="product-title">藍色寶盒 (4入)</div>
+              <div class="product-price">NT$560</div>
+            </div>
+          </div>
+          <!-- 商品項目 3 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer03.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box">
+              <div class="product-title">藍色寶盒 (9入)</div>
+              <div class="product-price">NT$880</div>
+            </div>
+          </div>
+          <!-- 商品項目 4 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer04.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box">
+              <div class="product-title">藍色寶盒 (36入)</div>
+              <div class="product-price">NT$2480</div>
+            </div>
+          </div>
+          <!-- 商品項目 5 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer05.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box sysBox">
+              <div class="product-title">珍珠巧克力 (焦糖口味)</div>
+              <div class="product-price">NT$680</div>
+            </div>
+          </div>
+          <!-- 商品項目 6 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer06.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box">
+              <div class="product-title">珍珠巧克力 (牛奶口味)
+              </div>
+              <div class="product-price">$680</div>
+            </div>
+          </div>
+          <!-- 商品項目 7 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer07.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box">
+              <div class="product-title">Big Heart Box (25入)
+              </div>
+              <div class="product-price">NT$2280</div>
+            </div>
+          </div>
+          <!-- 商品項目 8 -->
+          <div class="col-6 col-sm-4 col-lg-3 sysBox">
+            <div class="card">
+              <img src="./images/summer08.png" alt="Product Name 1">
+              <button class="search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span class="btn-text">查看商品</span>
+              </button>
+              <button class="cart-btn">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="btn-text">加入購物車</span>
+              </button>
+            </div>
+            <div class="card-box">
+              <div class="product-title">巧克力薄片 (Maracaibo 65%)
+              </div>
+              <div class="product-price">NT$1680</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </section>
+
+    <!--  Collections -->
+    <section class="product_collections">
+
+      <h2 class="sysHeadline">
+        <span>
+          禮品類別
+          <!-- コレクションズ -->
+          <b>Collections</b>
+        </span>
+      </h2>
+
+      <div class="container">
+        <ul class="row">
+          <li class="col-12 col-md-6">
+            <a href="ChocolateGanache_page.html"><img src="images/collection_001.jpeg" alt="Chocolate Ganache"
+                class="img-fluid"></a>
+            <p><span>Chocolate Ganache</span></p>
+          </li>
+          <li class="col-12 col-md-6">
+            <a href="finde_page.html"><img src="images/collection_002.jpeg" alt="Finde Chocolate" class="img-fluid"></a>
+            <p><span>Finde Chocolate</span></p>
+          </li>
+
+          <li class="col-12 col-md-6">
+            <a href="chocolateBar_page.html"><img src="images/collection_003.jpeg" alt="Chocolate Bar"
+                class="img-fluid"></a>
+            <p><span>Chocolate Bar</span></p>
+          </li>
+
+          <li class="col-12 col-md-6">
+            <img src="images/collection_004.jpeg" alt="Single Origin" class="img-fluid">
+            <p><span>Single Origin</span></p>
+          </li>
+
+          <li class="col-12 col-md-6">
+            <img src="images/collection_005.jpeg" alt="Cooke&Baked Cake" class="img-fluid">
+            <p><span>Cooke&Baked Cake</span></p>
+          </li>
+
+          <li class="col-12 col-md-6">
+            <img src="images/collection_007.jpeg" alt="Hot Chocolate" class="img-fluid">
+            <p><span>Hot Chocolate</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="sysFooter">
+      <div class="container">
+        <div class="row footer-wrap">
+          <div class="box col-12 col-md-4">
+            <h3>About MarieBelle</h3>
+            <ul>
+              <li>品牌願景</li>
+              <li>服務條款</li>
+              <li>常見問題</li>
+            </ul>
+          </div>
+          <div class="box col-12 col-md-4">
+            <h3>Online Shop</h3>
+            <ul>
+              <li>會員登錄</li>
+              <li>配送方法</li>
+              <li>常見問題</li>
+            </ul>
+          </div>
+          <div class="box col-12 col-md-4">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>HOLIDAY CALENDAR</li>
+              <li>COMPANY PROFILE</li>
+              <li>RECRUIT</li>
+            </ul>
+            <div class="boxContent">
+              <a href="https://www.instagram.com/mariebelle_japan/?ref=badge">
+                <span class="mdi--instagram"></span>
+              </a>
+              <span class="ic--baseline-facebook"></span>
+              <span class="material-symbols--mail-outline"></span>
+            </div>
+            <h3></h3>
+            <p>
+              <a href="index.html"><img src="images/footer_img2.png" width="160px" alt=""></a>
+            </p>
+          </div>
+          <p class="copyright"> © MarieBelle Japan All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- goTop -->
+  <button type="button" id="goTop" class="goTop-arrow" title="goTop"></button>
+
+
+
+  <!-- 引入 Bootstrap Javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/jslib.js"></script>
+</body>
+
+</html>

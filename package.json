@@ -1,0 +1,12 @@
+{
+  "name": "realtime-weather-app",
+  "homepage": "https://wiwiciao.github.io/project_mariebelle",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "scripts": {
+    "build": "mkdir -p build && cp -r * build/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}

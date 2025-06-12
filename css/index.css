@@ -1,0 +1,760 @@
+:root {
+  --font-size-default: 16px;
+  --font-size-md: 12px;
+}
+
+/**********************************
+  ** 基本設定 **
+
+	1.	盒模型：display, width, height, margin, padding, box-sizing
+	2.	排版：font-family, font-size, line-height, text-align, text-transform
+	3.	顏色和背景：color, background, background-color, border
+	4.	定位：position, top, right, bottom, left, z-index
+	5.	字型屬性：font-weight, font-style, font-variant, letter-spacing
+	6.	裝飾與效果：border-radius, box-shadow, text-shadow, opacity
+	7.	過渡與動畫：transition, transform, animation
+/***********************************/
+
+/* 避免因為 padding 和 border 影響盒模型計算 */
+/* 讓所有元素在一開始時統一基準 */
+
+html {
+  font-size: 16px;
+  /* 1rem = 16px */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* 讓 容器 占滿整個頁面高度 */
+  font-family: "Noto Serif TC", "Sedan SC", serif;
+  font-size: 12pt;
+  line-height: 1.2;
+  color: #333;
+  background-color: transparent;
+}
+
+header {
+  max-width: 100%;
+}
+
+main {
+  display: block;
+  /* 確保容器為區塊元素 */
+  max-width: 100%;
+  /* 設定合理的最大寬度 */
+  margin: 0 auto;
+  /* 讓 main 置中 */
+  margin-top: 98px;
+  background-color: #ffffff;
+
+}
+
+#footer {
+  width: 100%;
+  background-color: #312421;
+  /* 讓背景色統一，防止外部影響 */
+}
+
+.sysContent {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  /* 繼承父元素的 color */
+  text-decoration: none;
+  /* 移除預設底線 */
+  transition: opacity 0.3s ease;
+  /* 設定透明度的過渡效果 */
+}
+
+a:hover {
+  opacity: 0.5;
+  /* 滑鼠懸停時降低透明度 */
+}
+
+.logo-nohover a:hover {
+  opacity: 1;
+  /* 確保懸停時透明度保持 1 */
+}
+
+img {
+  /* display: block; */
+  vertical-align: bottom;
+  height: auto;
+  max-width: 100%;
+  /* 確保不超出父容器 */
+}
+
+/* 設置段落的外邊距為10px上下居中，左右自動 */
+p {
+  margin: 10px auto;
+}
+
+/* 設置具有 .indent 類的段落的外邊距為5px上下，左右為0，同時增加文字首行縮進1em */
+p.indent {
+  margin: 5px 0 !important;
+  text-indent: 1em;
+}
+
+/* 設置標題的字體大小與父元素相同 */
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  line-height: 1.2;
+  font-weight: bold;
+  letter-spacing: inherit;
+} */
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+#text {
+  padding: 2rem;
+}
+
+.clearfix::after {
+  content: "";
+  /* 在 .clearfix 元素之後插入空內容 */
+  clear: both;
+  display: block;
+}
+
+
+
+
+
+
+/***********************************
+  Navbar
+/***********************************/
+.navbar {
+  background-color: #8fd1e3;
+
+  .navbar-brand {
+    margin: 0;
+    padding-left: 1.5rem;
+
+    img {
+      width: 10rem;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-collapse {
+    /* padding-left: 1rem; */
+
+    ul.bar_icons {
+      padding: 0;
+    }
+  }
+}
+
+
+/* 螢幕小於 lg 尺寸時，讓 logo 居中 */
+@media (max-width: 992px) {
+  .navbar .container-fluid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .navbar-brand {
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar-toggler {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+
+    .navbar-collapse {
+      position: fixed;
+      left: 0;
+      top: 13%;
+      width: 300px;
+      height: 100vh;
+      z-index: 9999;
+      background-color: #8fd1e3;
+      padding-left: 2rem;
+      line-height: 2;
+      box-shadow: #000000;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+      /* 初始時隱藏在左側 */
+
+      .nav-item {
+        border-bottom: 1px solid;
+        max-width: 90%;
+      }
+    }
+
+    .navbar-collapse.show {
+      transform: translateX(0);
+    }
+  }
+}
+
+
+
+
+.nav-link {
+  color: #312421;
+  font-size: 1rem;
+  font-weight: thin;
+}
+
+.dropdown-item {
+  color: #312421;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.dropdown .dropdown-item:hover,
+.dropdown .dropdown-item:focus {
+  color: #000000 !important;
+  background-color: #dbd9d0;
+}
+
+#aboutme {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #ffffff;
+  background-color: #31384a;
+}
+
+.bar_icons i {
+  margin-top: 25px;
+  margin-right: 20px;
+  color: #9A9A9A;
+}
+
+.dropdown:hover>.dropdown-menu01,
+.dropend:hover>.dropdown-menu01 {
+  display: block;
+  margin-top: 0.125em;
+  margin-left: 0.125em;
+  margin-right: 80%;
+}
+
+.dropdown .dropdown-menu01 {
+  display: none;
+}
+
+.dropdown-menu01 {
+  --bs-dropdown-zindex: 1000;
+  --bs-dropdown-min-width: 7rem;
+  --bs-dropdown-padding-x: 0;
+  --bs-dropdown-padding-y: 0.5rem;
+  --bs-dropdown-spacer: 0.125rem;
+  --bs-dropdown-font-size: 1rem;
+  --bs-dropdown-color: #212529;
+  --bs-dropdown-bg: #fff;
+  --bs-dropdown-border-color: var(--bs-border-color-translucent);
+  --bs-dropdown-border-radius: 0.375rem;
+  --bs-dropdown-border-width: 1px;
+  --bs-dropdown-inner-border-radius: calc(0.375rem - 1px);
+  --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+  --bs-dropdown-divider-margin-y: 0.5rem;
+  --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-dropdown-link-color: #212529;
+  --bs-dropdown-link-hover-color: #1e2125;
+  --bs-dropdown-link-hover-bg: #e9ecef;
+  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-link-active-bg: #0d6efd;
+  --bs-dropdown-link-disabled-color: #adb5bd;
+  --bs-dropdown-item-padding-x: 1.5rem;
+  --bs-dropdown-item-padding-y: 0.25rem;
+  --bs-dropdown-header-color: #6c757d;
+  --bs-dropdown-header-padding-x: 1rem;
+  --bs-dropdown-header-padding-y: 0.5rem;
+  position: absolute;
+  z-index: var(--bs-dropdown-zindex);
+  display: none;
+  min-width: var(--bs-dropdown-min-width);
+  padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+  margin: 0;
+  font-size: var(--bs-dropdown-font-size);
+  color: var(--bs-dropdown-color);
+  text-align: left;
+  list-style: none;
+  background-color: var(--bs-dropdown-bg);
+  background-clip: padding-box;
+  border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+  border-radius: var(--bs-dropdown-border-radius);
+}
+
+
+
+/* Cart Shop */
+.cart-dropdown {
+  display: none; /* 預設隱藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}ㄏ
+
+.cart-dropdown.active {
+  display: block; /* 顯示購物車 */
+}
+
+
+
+
+
+/***********************************
+  Carousel
+/***********************************/
+.sysCarousel {
+  /* padding: 0; */
+  /* 影響 carousel 跟 navbar 的上邊距 */
+  /* element + padding top & bottom */
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  /* 容器的寬度設為 100%，意味著容器會佔據父元素的全部寬度。 */
+  height: auto;
+  /* 保持圖片的寬高比 */
+  object-fit: cover;
+  /* 確保圖片不會變形且填滿容器 */
+}
+
+
+
+
+
+
+/***********************************
+  Headline
+/***********************************/
+.sysHeadline {
+  position: relative;
+  width: 100%;
+  max-width: 70%;
+  margin: 6rem auto;
+  padding: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-align: center;
+
+  /* sysHeadline 前置橫線 */
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #222222;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 30rem;
+    /* 調整最大寬度 */
+    font-size: 1.2rem;
+    /* 螢幕小於 768px 時，字型稍微調小 */
+  }
+}
+
+/* 包裝文字的 span */
+.sysHeadline {
+  span {
+    display: inline-block;
+    position: relative;
+    margin: 0 2em;
+    padding: 0 2em;
+    z-index: 2;
+    background-color: #fff;
+    text-align: center;
+
+    b {
+      display: block;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+/* Summer Gift Selection */
+
+.product_lists .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sysBox {
+  margin-bottom: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 100%; /* 讓卡片寬度根據外部容器自適應 */
+  height: auto;
+  /* max-width: 200px; */
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  /* box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2); */
+
+  img {
+    display: block;
+    /* 圖片預設為行內元素，會有預設行距，所以改用 block */
+    width: 100%;
+    /* max-width: 250px; 限制圖片最大尺寸 */
+    height: auto;
+    object-fit: cover; /* 確保圖片不變形 */
+    transition: opacity .2s ease-out;
+    opacity: 0.9;
+  }
+
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 0.3;
+  }
+
+  .cart-btn,
+  .search-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    color: white;
+    border: 1px solid;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-btn {
+    bottom: 20%;
+    right: 20%;
+    background-color: #8fd1e3;
+  }
+
+  .search-btn {
+    bottom: 20%;
+    left: 20%;
+    background-color: rgba(94, 94, 93, 0.7);
+  }
+
+  &:hover {
+
+    .cart-btn,
+    .search-btn {
+      opacity: 1;
+    }
+  }
+
+  .btn-text {
+    position: absolute;
+    bottom: -1.5rem;
+    font-size: var(--font-size-default);
+    font-weight: bold;
+    white-space: nowrap;
+    /* 防止文字換行 */
+    color: rgb(121, 120, 120);
+    opacity: 0;
+  }
+
+  /* 滑鼠移入顯示文字 */
+  .material-symbols-outlined:hover+.btn-text {
+    opacity: 1;
+  }
+}
+
+/*
+@media (max-width: 576px) {
+  .search-btn:hover .btn-text,
+  .cart-btn .btn-text {
+    font-size: var(--font-size-md);
+  }
+} */
+
+
+/*
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 8rem;
+    height: 6rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: none;
+    margin: 20px 0;
+  }
+} */
+
+
+.card-box {
+  display: block;
+  color: #333;
+
+  .product-title {
+    /* display: inline; */
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .product-price {
+    text-align: center;
+  }
+}
+/*
+@media (max-width: 576px) {
+  .card-box .product-title {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+} */
+
+
+
+
+
+
+
+/***********************************
+  COLLECTIONS
+/***********************************/
+.product_collections {
+  margin: 10% auto;
+  /* 自動居中 */
+
+  ul {
+    list-style: none;
+
+    li {
+      margin: 10px 0;
+      vertical-align: top;
+
+      img {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        object-fit: cover;
+        transition: opacity .2s ease-out;
+        opacity: 0.9;
+
+        &:hover {
+          transition: opacity .2s ease-in;
+          opacity: 0.3;
+        }
+      }
+
+      p {
+        text-align: left;
+
+        span {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+/*
+@media (max-width: 992px) {
+  .product_collections ul li p span {
+    font-size: var(--font-size-md);
+  }
+} */
+
+
+
+
+
+/***********************************
+  Footer
+/***********************************/
+.sysFooter {
+  padding: 2rem;
+  line-height: 2em;
+  color: #ffffff;
+  background: #312421;
+
+  .footer-wrap {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    h3 {
+      margin: 10px auto;
+      line-height: 2em;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-bottom: 1px #c4c4c4 solid;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    p {
+      margin-top: 2rem;
+    }
+
+    .boxContent {
+      margin: 1rem 0;
+    }
+
+    .copyright {
+      padding-top: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+
+/* GoTop Button */
+.goTop-arrow {
+  display: none;
+  /* 預設隱藏，透過 JS 控制顯示 */
+  position: fixed;
+  right: 2rem;
+  /* 距離右邊1rem */
+  bottom: 6rem;
+  /* 距離底部4rem */
+  width: 40px;
+  height: 40px;
+  background: #cdc4c4;
+  border: 0;
+  /* 去掉邊框 */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  /* 平滑的過渡效果 */
+  opacity: 1;
+  /* 初始透明度為100%，完全不透明 */
+
+  /* 滑鼠懸停時的效果 */
+  &:hover {
+    opacity: 0.7;
+    /* 透明度調整為 70% */
+    background: #d2793e;
+  }
+
+  /* 按鈕中的兩個斜線，形成箭頭 */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    /* 絕對定位，確保斜線能在按鈕內部正確顯示 */
+    width: 16px;
+    height: 3px;
+    border-radius: 0px;
+    background: #333;
+  }
+
+  /* 定義斜線的變換，使其變成對角線 */
+  &::before {
+    left: 0.5rem;
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+
+  /* 定義另外一條斜線 */
+  &::after {
+    right: 0.5rem;
+    transform: rotate(45deg) translate(0, -50%);
+  }
+}
+
+
+
+
+
+
+
+/* breadcrumb */
+.breadcrumb {
+  padding-bottom: 50px;
+  padding-left: 62px;
+  margin: 0 auto;
+}
+
+.breadcrumb li {
+  --bs-link-color: #9A9A9A;
+  --bs-link-hover-color: #535353;
+  --bs-breadcrumb-item-active-color: #9b9b9b;
+
+}
+
+.badge.text-bg-dark {
+  color: #fff !important;
+}
+
+
+
+/***********************************
+  Collections Pages
+/***********************************/
+
+.product_pages .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  .sysContent {
+    text-align: center;
+    margin: 5rem 0;
+  }
+}
